@@ -44,3 +44,8 @@ jobs:
           path: BaseStation.sqb.tar.xz
           retention-days: 10
   
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: BaseStation.sqb.tar.xz
+  
