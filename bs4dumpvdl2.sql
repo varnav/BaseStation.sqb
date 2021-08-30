@@ -35,7 +35,6 @@ CREATE TEMP TABLE _csv_import(
 .import aircraftDatabaseu.csv _csv_import
 DROP TABLE IF EXISTS Aircraft;
 CREATE TABLE Aircraft(ModeS PRIMARY KEY, Registration, ICAOTypeCode, OperatorFlagCode, Manufacturer, Type, RegisteredOwners);
-CREATE INDEX IX_ModeS ON Aircraft(ModeS);
 INSERT OR IGNORE INTO Aircraft SELECT icao24, registration, typecode, operatoricao, manufacturericao, REPLACE(model,"'", '`'), REPLACE(REPLACE(owner, X'0A', ' '),"'", '`')
 FROM _csv_import WHERE registration!='' ORDER BY icao24;
 DROP TABLE _csv_import;
