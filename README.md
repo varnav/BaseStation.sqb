@@ -11,7 +11,7 @@ Click [here](https://github.com/varnav/BaseStation.sqb/releases/download/latest/
 ```sh
 cd ~
 wget https://github.com/varnav/BaseStation.sqb/releases/download/latest/BaseStation.sqb.tar.xz
-tar xf BaseStation.sqb.tar.xz
+tar xf BaseStation.sqb.tar.xz && rm -f BaseStation.sqb.tar.xz
 ```
 
 use this argument:
