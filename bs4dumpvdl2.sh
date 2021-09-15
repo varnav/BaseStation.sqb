@@ -6,7 +6,7 @@
 rm -f aircraftDatabase.csv
 echo "Stand by while downloading latest opensky csv file..."
 wget -q https://opensky-network.org/datasets/metadata/aircraftDatabase.csv
-minzize=80000000
+minzize=70000000
 dbsize=$(stat -c %s aircraftDatabase.csv)
 printf "aircraftDatabase.csv size is %d bytes\n" $dbsize
 if [ $dbsize -lt $minzize ]; then
