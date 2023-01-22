@@ -25,7 +25,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Install dependencies
         run: |
@@ -35,10 +35,10 @@ jobs:
       - name: Run DB import script and compress result
         run: |
           bash bs4dumpvdl2.sh
-          tar cJf BaseStation.sqb.tar.xz BaseStation.sqb
+          XZ_OPT=-9 tar cJf BaseStation.sqb.tar.xz BaseStation.sqb
       
       - name: 'Upload Artifact'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: BaseStation.sqb.tar.xz
           path: BaseStation.sqb.tar.xz
