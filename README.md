@@ -17,3 +17,7 @@ tar xf BaseStation.sqb.tar.xz && rm -f BaseStation.sqb.tar.xz
 use this argument:
 
 `--bs-db ~/basestation.sqb`
+
+# Use from REST API
+
+See [this project](https://github.com/varnav/acapi)
