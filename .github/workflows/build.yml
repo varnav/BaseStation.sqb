@@ -36,12 +36,20 @@ jobs:
         run: |
           bash bs4dumpvdl2.sh
           XZ_OPT=-9 tar cJf BaseStation.sqb.tar.xz BaseStation.sqb
+          tar czf BaseStation.sqb.tar.gz BaseStation.sqb
       
-      - name: 'Upload Artifact'
+      - name: 'Upload Artifact BaseStation.sqb.tar.xz'
         uses: actions/upload-artifact@v3
         with:
           name: BaseStation.sqb.tar.xz
           path: BaseStation.sqb.tar.xz
+          retention-days: 10
+
+      - name: 'Upload Artifact BaseStation.sqb.tar.xz'
+        uses: actions/upload-artifact@v3
+        with:
+          name: BaseStation.sqb.tar.gz
+          path: BaseStation.sqb.tar.gz
           retention-days: 10
   
       - name: Release
@@ -51,5 +59,7 @@ jobs:
           automatic_release_tag: "latest"
           prerelease: false
           title: "Autobuild"
-          files: BaseStation.sqb.tar.xz
+          files: |
+            BaseStation.sqb.tar.xz
+            BaseStation.sqb.tar.gz
   
