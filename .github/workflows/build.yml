@@ -25,7 +25,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Install dependencies
         run: |
@@ -38,14 +38,14 @@ jobs:
           XZ_OPT=-9 tar cJf BaseStation.sqb.tar.xz BaseStation.sqb
           tar czf BaseStation.sqb.tar.gz BaseStation.sqb
       
-      - name: 'Upload Artifact BaseStation.sqb.tar.xz'
-        uses: actions/upload-artifact@v3
+      - name: 'Upload xzipped artifact'
+        uses: actions/upload-artifact@v4
         with:
           name: BaseStation.sqb.tar.xz
           path: BaseStation.sqb.tar.xz
           retention-days: 10
 
-      - name: 'Upload Artifact BaseStation.sqb.tar.xz'
+      - name: 'Upload gzipped artifact'
         uses: actions/upload-artifact@v3
         with:
           name: BaseStation.sqb.tar.gz
