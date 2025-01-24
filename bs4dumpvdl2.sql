@@ -38,5 +38,6 @@ CREATE TABLE Aircraft(ModeS CHAR(6) UNIQUE PRIMARY KEY, Registration, ICAOTypeCo
 INSERT OR IGNORE INTO Aircraft SELECT icao24, registration, typecode, operatoricao, manufacturericao, REPLACE(model,"'", '`'), REPLACE(REPLACE(owner, X'0A', ' '),"'", '`')
 FROM _csv_import WHERE registration!='' ORDER BY icao24;
 DROP TABLE _csv_import;
+CREATE INDEX ix_aircraft_registration ON Aircraft(Registration);
 COMMIT;
 .exit
