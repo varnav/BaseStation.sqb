@@ -46,7 +46,7 @@ jobs:
           retention-days: 10
 
       - name: 'Upload gzipped artifact'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: BaseStation.sqb.tar.gz
           path: BaseStation.sqb.tar.gz
