@@ -1,3 +1,10 @@
+# Attention
+
+Opensky Network has temporarily suspended updates to their database. This means resulting file will not be
+updated for now. It is built using latest available data from February 2025.
+
+[See this page](https://opensky-network.org/data/aircraft)
+
 # BaseStation.sqb
 
 Builds `BaseStation.sqb` from [OpenSky Network](https://opensky-network.org/datasets/metadata/) CSV file.
