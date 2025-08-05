@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # Converts opensky aircraft database to BaseStation.sqb
 # Thanks to https://rdrinfo.net/
@@ -7,7 +7,7 @@ rm -f aircraftDatabase.csv
 echo "Stand by while downloading latest opensky csv file..."
 #wget -q https://opensky-network.org/datasets/metadata/aircraftDatabase.csv
 # See this link: https://opensky-network.org/data/aircraft
-wget -q https://s3.opensky-network.org/data-samples/metadata/aircraft-database-complete-2025-02.csv
+wget -q https://s3.opensky-network.org/data-samples/metadata/aircraft-database-complete-2025-02.csv -O aircraftDatabase.csv
 minzize=70000000
 dbsize=$(stat -c %s aircraftDatabase.csv)
 printf "aircraftDatabase.csv size is %d bytes\n" $dbsize
