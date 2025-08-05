@@ -2,33 +2,7 @@ PRAGMA foreign_keys=OFF;
 PRAGMA synchronous=OFF;
 BEGIN TRANSACTION;
 CREATE TEMP TABLE _csv_import(
-  "icao24" TEXT,
-  "registration" TEXT,
-  "manufacturericao" TEXT,
-  "manufacturername" TEXT,
-  "model" TEXT,
-  "typecode" TEXT,
-  "serialnumber" TEXT,
-  "linenumber" TEXT,
-  "icaoaircrafttype" TEXT,
-  "operator" TEXT,
-  "operatorcallsign" TEXT,
-  "operatoricao" TEXT,
-  "operatoriata" TEXT,
-  "owner" TEXT,
-  "testreg" TEXT,
-  "registered" TEXT,
-  "reguntil" TEXT,
-  "status" TEXT,
-  "built" TEXT,
-  "firstflightdate" TEXT,
-  "seatconfiguration" TEXT,
-  "engines" TEXT,
-  "modes" TEXT,
-  "adsb" TEXT,
-  "acars" TEXT,
-  "notes" TEXT,
-  "categoryDescription" TEXT
+'icao24','timestamp','acars','adsb','built','categoryDescription','country','engines','firstFlightDate','firstSeen','icaoAircraftClass','lineNumber','manufacturerIcao','manufacturerName','model','modes','nextReg','notes','operator','operatorCallsign','operatorIata','operatorIcao','owner','prevReg','regUntil','registered','registration','selCal','serialNumber','status','typecode','vdl'
 );
 .mode csv
 .separator ","
